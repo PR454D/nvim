@@ -6,3 +6,5 @@ function SplashMe(color)
 end
 
 SplashMe()
+
+require('colorizer').setup()
