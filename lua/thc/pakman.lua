@@ -29,14 +29,19 @@ return require('packer').startup({function()
 		requires = { {'nvim-lua/plenary.nvim'} } 
 	}
 
+	use ({
+		'nvim-treesitter/nvim-treesitter', run = { ':TSUpdate' },
+		requires = 'nvim-treesitter/playground',
+	})
+	use ({ 'theprimeagen/harpoon' }) -- blazingly fast jump-back
+	use ({ 'mbbill/undotree' })
+	use ({ 'tpope/vim-fugitive' })
 	use {
 		'folke/tokyonight.nvim',
 		config = function ()
-			vim.cmd[[colorscheme tokyonight-night]]
+			vim.cmd[[colorscheme tokyonight-moon]]
 		end
 	}
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
 	if packer_bootstrap then
 		require('packer').sync()
 	end

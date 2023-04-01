@@ -5,4 +5,6 @@ local global = vim.g
 global.mapleader = " "
 
 
-vim.keymap.set("n", "<leader>fn", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>nn", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>bk", vim.cmd.bd)
+vim.keymap.set("n", "<leader>gg", vim.cmd.G)
