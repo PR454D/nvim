@@ -18,20 +18,37 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  -- My plugins here
-  -- use 'foo1/bar1.nvim'
-  -- use 'foo2/bar2.nvim'
+return require('packer').startup({function()
+	use 'wbthomason/packer.nvim'
+	-- My plugins here
+	-- use 'foo1/bar1.nvim'
+	-- use 'foo2/bar2.nvim'
 
-  use {
-	  'nvim-telescope/telescope.nvim',
-	  requires = { {'nvim-lua/plenary.nvim'} } 
-  }
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = { {'nvim-lua/plenary.nvim'} } 
+	}
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
+	use {
+		'folke/tokyonight.nvim',
+		config = function ()
+			vim.cmd[[colorscheme tokyonight-night]]
+		end
+	}
+	-- Automatically set up your configuration after cloning packer.nvim
+	-- Put this at the end after all plugins
+	if packer_bootstrap then
+		require('packer').sync()
+	end
+end,
+config = {
+	display = {
+		open_fn = function()
+			return require('packer.util').float({ border = 'single' })
+		end
+	},
+	profile = {
+		enable = true,
+		threshold = 1
+	}
+}})
