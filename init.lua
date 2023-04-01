@@ -1,0 +1,2 @@
+require("thc")
+print("hello")
