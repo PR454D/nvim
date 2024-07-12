@@ -1,8 +1,8 @@
 local vim = vim
 
-vim.bo.tabstop=4
-vim.bo.softtabstop=4
-vim.bo.shiftwidth=4
+vim.bo.tabstop=2
+vim.bo.softtabstop=2
+vim.bo.shiftwidth=2
 vim.bo.expandtab=true
 
 vim.o.number = true
@@ -20,7 +20,7 @@ vim.opt.incsearch=true
 
 vim.opt.termguicolors=true
 
-vim.opt.scrolloff=8
+vim.opt.scrolloff=15
 vim.opt.pumheight=10
 vim.opt.signcolumn="yes"
 vim.opt.isfname:append("@-@")
@@ -28,5 +28,5 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.colorcolumn="80"
 vim.cmd[[
-hi NvimWordHighLight guifg='#f0faf512' guibg=none gui=bold
+hi NvimWordHighLight guifg='#f0faf5ff' guibg=none gui=bold
 ]]

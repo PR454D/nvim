@@ -5,18 +5,19 @@ local telescope = require('telescope')
 telescope.setup({
 	defaults = {
 		layout_config = {
-			vertical = { width = 0.5 }
+			vertical = { width = 0.8 }
 		}
 	},
 	pickers = {
 		find_files = {
-			-- theme = "dropdown",
-			winblend = 10,
+			theme = "ivy",
+			winblend = 15,
 			prompt_prefix = "🔍",
 		},
 		git_files = {
-			-- theme = "dropdown",
-			winblend = 10,
+			theme = "dropdown",
+			winblend = 15,
+			prompt_prefix = '📌',
 		}
 	},
 })
