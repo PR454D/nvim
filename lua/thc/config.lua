@@ -68,7 +68,7 @@ o.colorcolumn = "80,120"
 o.signcolumn = "yes:2"
 
 vim.cmd([[
-hi NvimWordHighLight guifg='#f0faf5ff' guibg=none gui=bold
+  hi NvimWordHighLight guifg='#f0faf5ff' guibg=none gui=bold
 ]])
 
 -- highlighting on yank
@@ -81,32 +81,36 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
 })
 
--- {{{#region native vim options
+-- ###
+-- type: doc; title: Hello;
+-- native vim options
+---
+---_
 
--- vim.cmd([[
+vim.cmd([[
 
---     set path+=**
---     set wildmenu
---     set wildoptions=pum
---     set wildignore+=**/node_modules/**
---     set shortmess+=c
---     set whichwrap+=<,>,[,],h,l
---     set iskeyword+=-
---     set formatoptions-=cro
---     set background=dark
---     set foldmethod=marker
---     set foldexpr=nvim_treesitter#foldexpr()
---     let g:neovide_refresh_rate=140
---     let g:livepreview_previewer = 'zathura'
---     let g:livepreview_engine = "lualatex"
---     if has("gui_running")
---         set guifont=\"JetBrainsMonoMedium Nerd Font Mono:h12\"
---     endif
---     augroup BuildNote
---         autocmd!
---         autocmd BufWritePost,FileWritePost *note-*.md silent !buildnote %:p
---     augroup end
--- ]])
+    set path+=**
+    set wildmenu
+    set wildoptions=pum
+    set wildignore+=**/node_modules/**
+    set shortmess+=c
+    set whichwrap+=<,>,[,],h,l
+    set iskeyword+=-
+    set formatoptions-=cro
+    set background=dark
+    set foldmethod=expr
+    " set foldmarker=###,###
+    set foldexpr=nvim_treesitter#foldexpr()
+    let g:neovide_refresh_rate=140
+    let g:livepreview_previewer = 'zathura'
+    let g:livepreview_engine = "lualatex"
+    if has("gui_running")
+        set guifont=\"JetBrainsMonoMedium Nerd Font Mono:h12\"
+    endif
+    augroup BuildNote
+        autocmd!
+        autocmd BufWritePost,FileWritePost *note-*.md silent !buildnote %:p
+    augroup end
+]])
 
-
---#endregion demo}}}
+-- #endregion ###

@@ -17,16 +17,16 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<leader>s", ":so<CR>")
 
-vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("x", "<leader>p", '"_dP')
 
 -- yank to system clipboard
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>Y", '"+y')
+vim.keymap.set("v", "<leader>y", '"+y')
 
 -- delete to void register
-vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("v", "<leader>d", "\"_d")
+vim.keymap.set("n", "<leader>d", '"_d')
+vim.keymap.set("v", "<leader>d", '"_d')
 
 vim.keymap.set("n", "Q", "<nop>")
 
@@ -44,10 +44,10 @@ vim.keymap.set("v", "<leader>d", [["_d]], { desc = "Paste from system clipboard"
 
 -- replace current word
 vim.keymap.set(
-	"n",
-	"<leader>rp",
-	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-	{ desc = "Replace current word" }
+  "n",
+  "<leader>rp",
+  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+  { desc = "Replace current word" }
 )
 
 -- window management
@@ -56,6 +56,12 @@ vim.keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally"
 vim.keymap.set("n", "<leader>we", "<C-w>=", { desc = "Make splits equal size" })
 vim.keymap.set("n", "<leader>wn", "<C-w>w", { desc = "Move to next window" })
 vim.keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current split" })
+
+-- window movement
+vim.keymap.set("n", "<c-h>", "<C-w>h", { desc = "Jump left" })
+vim.keymap.set("n", "<c-j>", "<C-w>j", { desc = "Jump down" })
+vim.keymap.set("n", "<c-k>", "<C-w>k", { desc = "Jump up" })
+vim.keymap.set("n", "<c-l>", "<C-w>l", { desc = "Jump right" })
 
 -- tab management
 vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })

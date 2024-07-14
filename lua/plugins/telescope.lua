@@ -1,6 +1,8 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
+    enabled = true,
+    priority = 5000,
     dependencies = {
       { "nvim-lua/plenary.nvim" },
       {
@@ -14,5 +16,12 @@ return {
   },
   {
     "nvim-telescope/telescope-ui-select.nvim",
+    enabled = true,
+    priority = 5000,
+  },
+  {
+    "xiyaowong/telescope-emoji.nvim",
+    enabled = true,
+    priority = 5000,
   },
 }
