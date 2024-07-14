@@ -4,10 +4,47 @@ return {
   init = function()
     vim.o.timeout = true
     vim.o.timeoutlen = 300
+
+    -- Documenting with which-key
+    -- require("which-key").add({
+    --   { "<leader>l", group = "LSP" },
+    --   { "<leader>f", group = "Filetree" },
+    --   { "<leader>m", group = "Format or Linting" },
+    --   { "<leader>r", group = "Rename" },
+    --   { "<leader>s", group = "Search" },
+    --   { "<leader>t", group = "Tabs" },
+    --   { "<leader>u", group = "Buffers" },
+    --   { "<leader>w", group = "Wins" },
+    -- })
   end,
   opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  }
+    preset = "classic",
+    modes = {
+      x = false,
+    },
+    win = {
+      border = "none",
+      padding = { 1, 3 },
+    },
+    icons = {
+      rules = false,
+      keys = {
+        Up = " ",
+        Down = " ",
+        Left = " ",
+        Right = " ",
+        C = "ctrl ",
+        M = "meta ",
+        S = "shft ",
+        CR = "retr ",
+        Esc = "esc ",
+        ScrollWheelDown = "󱕐 ",
+        ScrollWheelUp = "󱕑 ",
+        NL = "newl ",
+        BS = "bks ",
+        Space = "spc ",
+        Tab = "tab ",
+      },
+    },
+  },
 }
