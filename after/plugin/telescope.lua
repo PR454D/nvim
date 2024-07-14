@@ -16,7 +16,7 @@ telescope.setup({
       prompt_prefix = "🔍",
     },
     git_files = {
-      theme = "ivy",
+      theme = "dropdown",
       winblend = 15,
       prompt_prefix = " ",
     },
@@ -28,7 +28,8 @@ telescope.setup({
   },
 })
 
-telescope.load_extension("ui-select")
+pcall(telescope.load_extension, "ui-select")
+pcall(telescope.load_extension, "fzf")
 
 vim.keymap.set("", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("", "<C-p>", builtin.git_files, {})
@@ -39,3 +40,5 @@ vim.keymap.set("", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("", "<leader>bb", builtin.buffers, {})
 vim.keymap.set("", "<leader>fh", builtin.help_tags, {})
 vim.keymap.set("", "<leader>fb", builtin.builtin, {})
+
+vim.keymap.set("", "<leader>gc", builtin.git_commits, {})
