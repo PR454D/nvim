@@ -1,5 +1,6 @@
 return {
   {
+    -- TODO:
     "nvim-telescope/telescope.nvim",
     enabled = true,
     priority = 5000,

@@ -2,10 +2,10 @@ return {
   "williamboman/mason.nvim",
   event = "VeryLazy",
   dependencies = {
-    "williamboman/mason-lspconfig.nvim"
+    "williamboman/mason-lspconfig.nvim",
   },
   config = function(_, opts)
-    local conf = vim.tbl_deep_extend('keep', opts, {
+    local conf = vim.tbl_deep_extend("keep", opts, {
       ui = {
         height = 0.8,
         width = 0.6,
@@ -16,7 +16,6 @@ return {
           package_uninstalled = "✗",
         },
       },
-
     })
     require("mason").setup(conf)
 
@@ -25,7 +24,8 @@ return {
         "lua_ls",
         "gopls",
         "eslint",
+        "zls",
       },
     })
-  end
+  end,
 }

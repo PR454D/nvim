@@ -20,6 +20,7 @@ return {
       java.setup({})
       lspconfig.jdtls.setup({})
       lspconfig.lua_ls.setup({})
+      lspconfig.zls.setup({})
       -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       vim.api.nvim_create_autocmd("LspAttach", {
