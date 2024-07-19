@@ -8,7 +8,7 @@ local open_with_trouble = require("trouble.sources.telescope").open
 telescope.setup({
   defaults = {
     layout_config = {
-      vertical = { width = 0.8 },
+      horizontal = { width = 0.8 },
     },
     mappings = {
       i = { ["<c-t>"] = open_with_trouble },
@@ -17,9 +17,24 @@ telescope.setup({
   },
   pickers = {
     find_files = {
-      theme = "ivy",
+      theme = "dropdown",
       winblend = 15,
       prompt_prefix = "🔍",
+      layout_config = {
+        center = {
+          width = 0.8,
+          height = 0.8,
+        },
+      },
+    },
+    live_grep = {
+      theme = "ivy",
+      winblend = 20,
+      prompt_prefix = "🔍",
+      layout_config = {
+        height = 0.6,
+        width = 0.5,
+      },
     },
     git_files = {
       theme = "dropdown",
@@ -53,18 +68,30 @@ telescope.setup({
 
 pcall(telescope.load_extension, "ui-select")
 pcall(telescope.load_extension, "fzf")
-telescope.load_extension("emoji")
+pcall(telescope.load_extension, "emoji")
 
 vim.keymap.set("", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("", "<C-p>", builtin.git_files, {})
-vim.keymap.set("", "<leader>fs", function()
-  builtin.grep_string({ search = vim.fn.input("grep > ") })
-end)
+-- vim.keymap.set("", "<leader>fs", function()
+--   builtin.grep_string({ search = vim.fn.input("grep > ") })
+-- end)
 vim.keymap.set("", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("", "<leader>bb", builtin.buffers, {})
 vim.keymap.set("", "<leader>fh", builtin.help_tags, {})
 vim.keymap.set("", "<leader>fb", builtin.builtin, {})
--- vim.keymap.set("n", "<leader>ee", require("telescope-emoji").search, { desc = "Search emojis" })
+vim.keymap.set("", "<leader>tp", builtin.pickers, {})
+vim.keymap.set("", "<leader>ee", function()
+  telescope.extensions["emoji"].emoji({
+    theme = "dropdown",
+    winblend = 0,
+    prompt_prefix = "🚀🔥",
+    layout_config = {
+      height = 0.6,
+      width = 0.8,
+    },
+  })
+end, { noremap = true, silent = true, desc = "Search emojis" })
+vim.keymap.set("", "<leader>tc", vim.cmd.Cheatsheet, { desc = "Search cheatsheets" })
 
 vim.keymap.set("", "<leader>gc", builtin.git_commits, {})
 
