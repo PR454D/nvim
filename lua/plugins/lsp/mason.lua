@@ -25,6 +25,7 @@ return {
         "gopls",
         "eslint",
         "zls",
+        "rust_analyzer",
       },
     })
   end,

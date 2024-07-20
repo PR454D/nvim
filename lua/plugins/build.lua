@@ -6,7 +6,7 @@ return {
   },
   {
     "krshrimali/nvim-autorunner",
-    enabled = true,
+    enabled = false,
     event = "VeryLazy",
     opts = {},
   },

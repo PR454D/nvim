@@ -22,6 +22,7 @@ return {
       lspconfig.lua_ls.setup({})
       lspconfig.zls.setup({})
       lspconfig.clangd.setup({})
+      lspconfig.rust_analyzer.setup({})
       -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       vim.api.nvim_create_autocmd("LspAttach", {
