@@ -18,10 +18,18 @@ return require("lazy").setup({
   spec = {
     { import = "plugins.lsp" },
     { import = "plugins.ui" },
+    { import = "plugins.mini" },
     { import = "plugins" },
   },
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
+  install = { colorscheme = { "tokyonight-moon" } },
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  change_detection = {
+    notify = false,
+  },
   ui = { border = "rounded", size = { width = 0.6, height = 0.8 } },
 })
 

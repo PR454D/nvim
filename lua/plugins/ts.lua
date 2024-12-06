@@ -1,5 +1,6 @@
 return {
-	'nvim-treesitter/nvim-treesitter',
-	run = { ':TSUpdate' },
-	dependencies = {'nvim-treesitter/playground', }
+  "nvim-treesitter/nvim-treesitter",
+  build = { ":TSUpdate" },
+  event = { "BufReadPre", "BufNewFile" },
+  dependencies = { "nvim-treesitter/playground" },
 }

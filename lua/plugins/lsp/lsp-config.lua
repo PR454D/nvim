@@ -17,12 +17,33 @@ return {
       local vim = vim
       local java = require("java")
       local lspconfig = require("lspconfig")
-      java.setup({})
-      lspconfig.jdtls.setup({})
+      java.setup({
+        notifications = {
+          dap = false,
+        },
+      })
+      lspconfig.jdtls.setup({
+        settings = {
+          java = {
+            configuration = {
+              runtimes = {
+                {
+                  name = "Open JDK 21",
+                  path = "$HOME/.sdkman/candidates/java/current",
+                  default = true,
+                },
+              },
+            },
+          },
+        },
+      })
       lspconfig.lua_ls.setup({})
       lspconfig.zls.setup({})
       lspconfig.clangd.setup({})
+      lspconfig.ltex.setup({})
       lspconfig.rust_analyzer.setup({})
+      lspconfig.ts_ls.setup({})
+      lspconfig.mesonlsp.setup({})
       -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       vim.api.nvim_create_autocmd("LspAttach", {
@@ -39,6 +60,7 @@ return {
           map("<leader>vrn", vim.lsp.buf.rename, "Smart rename")
           map("K", vim.lsp.buf.hover, "Documentation over Word")
           map("gd", vim.lsp.buf.definition, "Go to definition")
+          map("gi", vim.lsp.buf.implementation, "Go to definition")
           map("<leader>vws", vim.lsp.buf.workspace_symbol, "workspace_symbol")
           vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
           vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)

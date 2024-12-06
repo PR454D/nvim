@@ -1,6 +1,7 @@
-require("nvim-treesitter.configs").setup({
+local treesitterConfigs = require("nvim-treesitter.configs")
+treesitterConfigs.setup({
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "javascript", "c", "lua", "vim", "java", "python", "query" },
+  ensure_installed = { "html", "javascript", "c", "lua", "vim", "java", "python", "query" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -14,5 +15,17 @@ require("nvim-treesitter.configs").setup({
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
+  },
+  incremental_selection = {
+    enable = true,
+  },
+  indent = {
+    enable = true,
+  },
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true,
+    },
   },
 })
