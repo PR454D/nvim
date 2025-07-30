@@ -12,6 +12,11 @@ opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.swapfile = false
 
+opt.hlsearch = false
+opt.incsearch = true
+opt.ignorecase = true
+opt.smartcase = true
+
 opt.expandtab = true
 opt.smartindent = true
 opt.smarttab = true
@@ -75,18 +80,15 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("n", "Y", "y$", { silent = true, noremap = true, desc = "Copy to End of line" })
-vim.keymap.set({'n','v','x'}, "<leader>y", '"+y<CR>', { silent = true, noremap = true, desc = "Copy to Clipboard" })
-vim.keymap.set({'n','v','x'}, "<leader>d", '"+d<CR>', { silent = true, noremap = true, desc = "Copy to Clipboard" })
-
-vim.keymap.set({ "n", "x" }, "<leader>f", ":Pick files<CR>", { desc = "Find files" })
-vim.keymap.set({ "n", "x" }, "<leader>h", ":Pick help<CR>", { silent = true, noremap = true, desc = "Find files" })
-vim.keymap.set({ "n", "x" }, "<leader>e", ":Oil<CR>", { silent = true, noremap = true, desc = "File Browser" })
+vim.keymap.set({ 'n', 'v', 'x' }, "<leader>y", '"+y<CR>', { silent = true, noremap = true, desc = "Copy to Clipboard" })
+vim.keymap.set({ 'n', 'v', 'x' }, "<leader>d", '"+d<CR>', { silent = true, noremap = true, desc = "Copy to Clipboard" })
 
 vim.pack.add {
     { src = "https://github.com/folke/tokyonight.nvim" },
     { src = "https://github.com/stevearc/oil.nvim" },
-    { src = "https://github.com/echasnovski/mini.pick" },
+    { src = "https://github.com/echasnovski/mini.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
+    { src = "https://github.com/tpope/vim-fugitive" },
 }
 
 vim.lsp.enable { "lua_ls", "jdtls" }
