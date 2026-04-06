@@ -58,7 +58,7 @@ snacks.setup({
 
 vim.keymap.set(
   { "x", "n" },
-  "ff",
+  "<leader>ff",
   snacks.picker.files,
   { noremap = true, desc = "Find Files" }
 )
