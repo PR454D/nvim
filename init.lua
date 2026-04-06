@@ -47,6 +47,7 @@ vim.opt.path:append { '**' }
 vim.opt.grepprg = 'rg --vimgrep --no-messages --smart-case'
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldlevel = 99
 
 vim.cmd [[ hi NvimWordHighLight guifg='#f0faf5ff' guibg=none gui=bold ]]
 
@@ -110,8 +111,10 @@ vim.pack.add {
 
     'https://github.com/stevearc/oil.nvim',
     'https://github.com/folke/tokyonight.nvim',
+
     'https://github.com/nvim-mini/mini.nvim',
     'https://github.com/tpope/vim-fugitive',
+
     { src = "https://github.com/L3MON4D3/LuaSnip" },
     { src = "https://github.com/rafamadriz/friendly-snippets" },
 }
