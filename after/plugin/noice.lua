@@ -1,7 +1,7 @@
 local noice = require("noice")
 noice.setup({
   presets = {
-    lsp_doc_border = true,
+    -- lsp_doc_border = true,
     inc_rename = true,
   },
   views = {
@@ -13,6 +13,21 @@ noice.setup({
       size = {
         width = 60,
         height = "auto",
+      },
+    },
+    popup = {
+      border = {
+        style = "rounded",
+      },
+    },
+    confirm = {
+      border = {
+        style = "rounded",
+      },
+    },
+    hover = {
+      border = {
+        style = "rounded",
       },
     },
     popupmenu = {
