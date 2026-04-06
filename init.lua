@@ -149,6 +149,26 @@ vim.keymap.set(
   "<C-w>k",
   { silent = true, noremap = true, desc = "Jump up" }
 )
+local term_opts = { silent = true }
+vim.keymap.set("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
+vim.keymap.set("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
+vim.keymap.set("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
+vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+-- -- Visual --
+-- -- Stay in indent mode
+vim.keymap.set("v", "<", "<gv", term_opts)
+vim.keymap.set("v", ">", ">gv", term_opts)
+-- -- Move text up and down
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", term_opts)
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", term_opts)
+vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi", term_opts)
+vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi", term_opts)
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv==gv", term_opts)
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv==gv", term_opts)
+-- -- Visual Block --
+vim.keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv", term_opts)
+vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", term_opts)
+
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")

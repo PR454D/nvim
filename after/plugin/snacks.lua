@@ -4,6 +4,9 @@ snacks.setup({
   bigfile = { enabled = true },
   bufdelete = { enabled = true },
   gitbrowse = { enabled = true },
+  dim = { enabled = true },
+  image = { enabled = true },
+  terminal = { enabled = true },
   scroll = { enabled = true },
   rename = { enabled = true },
   picker = {
@@ -122,6 +125,9 @@ vim.keymap.set(
   { silent = true, noremap = true, desc = "Find Help" }
 )
 vim.keymap.set("n", "<leader>fm", snacks.picker.man, { desc = "Man Page" })
+vim.keymap.set("n", "<leader>ud", function()
+  snacks.toggle.dim():toggle()
+end, { desc = "Toggle Dim" })
 
 vim.keymap.set(
   { "n", "x" },
@@ -129,3 +135,7 @@ vim.keymap.set(
   snacks.picker.grep,
   { silent = true, noremap = true, desc = "Grep Live" }
 )
+
+vim.keymap.set({ "n", "t" }, "<leader>t", function()
+  Snacks.terminal.toggle()
+end, { desc = "Toggle terminal" })
