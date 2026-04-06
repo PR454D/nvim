@@ -45,7 +45,6 @@ vim.opt.wildoptions:append { 'fuzzy' }
 vim.opt.wildoptions:append { 'pum' }
 vim.opt.path:append { '**' }
 vim.opt.grepprg = 'rg --vimgrep --no-messages --smart-case'
-vim.opt.statusline = '[%n] %<%f %h%w%m%r%=%-14.(%l,%c%V%) %P'
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 
@@ -96,36 +95,24 @@ vim.keymap.set({ 'n', 'v', 'x' }, "<leader>d", '"+d<CR>', { silent = true, norem
 vim.pack.add {
     'https://github.com/nvim-treesitter/nvim-treesitter',
     'https://github.com/neovim/nvim-lspconfig',
+
+    { src = "https://github.com/mason-org/mason.nvim" },
+    { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
+    { src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
+
+    { -- blink completion
+        src = "https://github.com/Saghen/blink.cmp",
+        version = vim.version.range("*")
+    },
+    { src = "https://github.com/folke/which-key.nvim" },
+    { src = "https://github.com/MagicDuck/grug-far.nvim" },
+    "https://github.com/lewis6991/gitsigns.nvim",
+
     'https://github.com/stevearc/oil.nvim',
     'https://github.com/folke/tokyonight.nvim',
     'https://github.com/nvim-mini/mini.nvim',
     'https://github.com/tpope/vim-fugitive',
 }
-
-local oil = require('oil')
-oil.setup()
-local mini_pairs = require('mini.pairs')
-local mini_notify = require('mini.notify')
-mini_pairs.setup()
-mini_notify.setup({
-    lsp_progress = {
-        enable = true,
-        level = 'TRACE',
-        duration_last = 500,
-    }
-})
-vim.notify = mini_notify.make_notify({
-    ERROR = { duration = 2000, hl_group = 'DiagnosticError' },
-    WARN  = { duration = 1500, hl_group = 'DiagnosticWarn' },
-    INFO  = { duration = 2000, hl_group = 'DiagnosticInfo' },
-    DEBUG = { duration = 300, hl_group = 'DiagnosticHint' },
-    TRACE = { duration = 200, hl_group = 'DiagnosticOk' },
-    OFF   = { duration = 0, hl_group = 'MiniNotifyNormal' },
-})
-
-vim.keymap.set({ 'n', 'x' }, "<leader><leader>", vim.cmd.Oil, { silent = true, noremap = true, desc = "File Explorer" })
-
-vim.cmd.colorscheme('tokyonight-moon')
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 if capabilities.workspace then
