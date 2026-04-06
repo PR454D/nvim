@@ -112,6 +112,8 @@ vim.pack.add {
     'https://github.com/folke/tokyonight.nvim',
     'https://github.com/nvim-mini/mini.nvim',
     'https://github.com/tpope/vim-fugitive',
+    { src = "https://github.com/L3MON4D3/LuaSnip" },
+    { src = "https://github.com/rafamadriz/friendly-snippets" },
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
