@@ -29,7 +29,7 @@ mini_notify.setup({
     end,
   },
   lsp_progress = {
-    enable = true,
+    enable = false,
     level = "TRACE",
     duration_last = 100,
   },

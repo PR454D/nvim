@@ -169,7 +169,6 @@ vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv==gv", term_opts)
 vim.keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv", term_opts)
 vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", term_opts)
 
-
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
@@ -220,6 +219,8 @@ vim.pack.add({
   { src = "https://github.com/rafamadriz/friendly-snippets" },
 
   { src = "https://github.com/folke/snacks.nvim" },
+  { src = "https://github.com/folke/noice.nvim" },
+  { src = "https://github.com/MunifTanjim/nui.nvim" },
 })
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

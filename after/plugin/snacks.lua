@@ -139,3 +139,6 @@ vim.keymap.set(
 vim.keymap.set({ "n", "t" }, "<leader>t", function()
   Snacks.terminal.toggle()
 end, { desc = "Toggle terminal" })
+vim.keymap.set({ "n", "t" }, "<leader>/", function()
+  Snacks.terminal.toggle()
+end, { desc = "Toggle terminal" })
