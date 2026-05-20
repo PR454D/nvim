@@ -194,6 +194,13 @@ vim.keymap.set(
   { silent = true, noremap = true, desc = "Grep Live" }
 )
 
+vim.keymap.set(
+  "x",
+  "<leader>xx",
+  Snacks.picker.diagnostics(),
+  { silent = true, noremap = true, desc = "Grep Live" }
+)
+
 vim.keymap.set({ "n", "t" }, "<leader>t", function()
   Snacks.terminal.toggle()
 end, { desc = "Toggle terminal" })

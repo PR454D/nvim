@@ -12,7 +12,6 @@ require("vim._core.ui2").enable({
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 vim.cmd.packadd("cfilter")
-vim.cmd.packadd("nvim.undotree")
 vim.cmd.packadd("nvim.difftool")
 require("options")
 require("keymaps")

@@ -15,6 +15,7 @@ require("mini.basics").setup({
 })
 require("mini.icons").setup()
 require("mini.statusline").setup()
+require("mini.surround").setup()
 local mini_pairs = require("mini.pairs")
 local mini_notify = require("mini.notify")
 
@@ -32,7 +33,7 @@ mini_notify.setup({
       if notif.data.source == "lsp_progress" then
         return notif.msg
       end
-      return MiniNotify.default_format(notif)
+      return mini_notify.default_format(notif)
     end,
 
     -- Show more recent notifications first

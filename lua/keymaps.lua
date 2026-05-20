@@ -36,12 +36,6 @@ vim.keymap.set(
 )
 vim.keymap.set(
   "n",
-  "<leader>x",
-  ":close<CR>",
-  { silent = true, noremap = true, desc = "Close window" }
-)
-vim.keymap.set(
-  "n",
   "<leader>bd",
   ":bd<CR>",
   { silent = true, noremap = true, desc = "Delete current buffer" }
@@ -131,4 +125,13 @@ vim.keymap.set(
   "<leader>d",
   '"+d<CR>',
   { silent = true, noremap = true, desc = "Copy to Clipboard" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>ut",
+  function ()
+    vim.cmd.packadd("nvim.undotree")
+    require("undotree").open()
+  end,
+  { silent = true, noremap = true, desc = "Toggle Undo Tree" }
 )
