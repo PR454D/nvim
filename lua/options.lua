@@ -46,7 +46,8 @@ vim.opt.isfname:append("@-@")
 opt.guicursor = ""
 opt.signcolumn = "yes"
 
-vim.opt.completeopt = "menu,menuone,fuzzy,noinsert"
+vim.opt.completeopt = "menuone,popup,fuzzy,noselect,noinsert,nosort"
+vim.opt.shortmess:append("c")
 vim.opt.termguicolors = true
 vim.opt.linebreak = true
 vim.opt.smoothscroll = true

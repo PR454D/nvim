@@ -151,7 +151,7 @@ vim.keymap.set(
 
 vim.keymap.set(
   { "x", "n" },
-  "<leader>p",
+  "<C-p>",
   snacks.picker.buffers,
   { noremap = true, desc = "Open buffers" }
 )
@@ -195,15 +195,22 @@ vim.keymap.set(
 )
 
 vim.keymap.set(
-  "x",
-  "<leader>xx",
-  Snacks.picker.diagnostics(),
-  { silent = true, noremap = true, desc = "Grep Live" }
+  { "x", "n" },
+  "<leader>fd",
+  snacks.picker.diagnostics,
+  { silent = true, noremap = true, desc = "Find diagnostics" }
+)
+
+vim.keymap.set(
+  { "x", "n" },
+  "<leader>fk",
+  snacks.picker.keymaps,
+  { silent = true, noremap = true, desc = "Find keymaps" }
 )
 
 vim.keymap.set({ "n", "t" }, "<leader>t", function()
-  Snacks.terminal.toggle()
+  snacks.terminal.toggle()
 end, { desc = "Toggle terminal" })
 vim.keymap.set({ "n", "t" }, "<leader>/", function()
-  Snacks.terminal.toggle()
+  snacks.terminal.toggle()
 end, { desc = "Toggle terminal" })

@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd("PackChanged", {
         vim.cmd.packadd("blink.lib")
         vim.cmd.packadd("blink.cmp")
       end
-      vim.notify("TreeSitter updated, running TSUpdate", vim.log.levels.INFO)
+      vim.notify("Blink.cmp updated, running build", vim.log.levels.INFO)
       ---@diagnostic disable-next-line: param-type-mismatch
       local ok, blink = pcall(require, "blink.cmp")
       blink.build():wait(60000)
@@ -52,10 +52,12 @@ vim.api.nvim_create_autocmd("PackChanged", {
 })
 
 require("blink.cmp").setup({
-  keymap = { preset = "default" },
   signature = { enabled = true },
   completion = {
     documentation = { auto_show = true, auto_show_delay_ms = 200 },
+    sources = {
+      default = { "lsp", "path", "snippets", "buffer" },
+    },
     menu = {
       auto_show = true,
       draw = {
@@ -70,6 +72,18 @@ require("blink.cmp").setup({
 })
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities({}, false))
+
+capabilities = vim.tbl_deep_extend('force', capabilities, {
+  textDocument = {
+    foldingRange = {
+      dynamicRegistration = false,
+      lineFoldingOnly = true
+    }
+  }
+})
+
 if capabilities.workspace then
   capabilities.workspace.didChangeWatchedFiles = nil
 end
@@ -82,7 +96,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
     if client:supports_method("textDocument/completion") then
       vim.o.complete = "o,.,w,b,u"
-      vim.o.completeopt = "menu,menuone,popup,noinsert"
+      vim.opt.completeopt = "menuone,popup,fuzzy,noselect,noinsert,nosort"
       vim.lsp.completion.enable(true, client.id, args.buf)
     end
   end,
