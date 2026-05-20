@@ -1,87 +1,93 @@
 vim.keymap.set(
-    "n",
-    "<leader>so",
-    ":update<CR> :source<CR>",
-    { silent = true, noremap = true, desc = "Source current file" }
+  "x",
+  "p",
+  [["_dP]],
+  { desc = "Paste over selection without losing text" }
 )
 vim.keymap.set(
-    "n",
-    "<leader>z",
-    "<CMD>:.lua<CR>",
-    { silent = true, noremap = true, desc = "Execute current line" }
+  "n",
+  "<leader>so",
+  ":update<CR> :source<CR>",
+  { silent = true, noremap = true, desc = "Source current file" }
 )
 vim.keymap.set(
-    "n",
-    "<leader>rr",
-    "<CMD>restart<CR>",
-    { silent = true, noremap = true, desc = "Restart neovim" }
+  "n",
+  "<leader>z",
+  "<CMD>:.lua<CR>",
+  { silent = true, noremap = true, desc = "Execute current line" }
 )
 vim.keymap.set(
-    "n",
-    "<leader>w",
-    ":write<CR>",
-    { silent = true, noremap = true, desc = "Write current file" }
+  "n",
+  "<leader>rr",
+  "<CMD>restart<CR>",
+  { silent = true, noremap = true, desc = "Restart neovim" }
 )
 vim.keymap.set(
-    "n",
-    "<leader>q",
-    ":quit<CR>",
-    { silent = true, noremap = true, desc = "Quit" }
+  "n",
+  "<leader>w",
+  ":write<CR>",
+  { silent = true, noremap = true, desc = "Write current file" }
 )
 vim.keymap.set(
-    "n",
-    "<leader>x",
-    ":close<CR>",
-    { silent = true, noremap = true, desc = "Close window" }
+  "n",
+  "<leader>q",
+  ":quit<CR>",
+  { silent = true, noremap = true, desc = "Quit" }
 )
 vim.keymap.set(
-    "n",
-    "<leader>bd",
-    ":bd<CR>",
-    { silent = true, noremap = true, desc = "Delete current buffer" }
+  "n",
+  "<leader>x",
+  ":close<CR>",
+  { silent = true, noremap = true, desc = "Close window" }
 )
 vim.keymap.set(
-    "n",
-    "<leader>cf",
-    vim.lsp.buf.format,
-    { desc = "Format by LSP" }
+  "n",
+  "<leader>bd",
+  ":bd<CR>",
+  { silent = true, noremap = true, desc = "Delete current buffer" }
 )
 vim.keymap.set(
-    { "x", "n" },
-    "gy",
-    vim.lsp.buf.type_definition,
-    { desc = "Go to type definition" }
+  "n",
+  "<leader>cf",
+  vim.lsp.buf.format,
+  { desc = "Format by LSP" }
 )
 vim.keymap.set(
-    "n",
-    "<leader>lu",
-    vim.pack.update,
-    { silent = true, noremap = true, desc = "Update All Plugins" }
+  { "x", "n" },
+  "gy",
+  vim.lsp.buf.type_definition,
+  { desc = "Go to type definition" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>lu",
+  vim.pack.update,
+  { silent = true, noremap = true, desc = "Update All Plugins" }
 )
 
 vim.keymap.set(
-    "n",
-    "<C-h>",
-    "<C-w>h",
-    { silent = true, noremap = true, desc = "Jump left" }
+  "n",
+  "<C-h>",
+  "<C-w>h",
+  { silent = true, noremap = true, desc = "Jump left" }
 )
 vim.keymap.set(
-    "n",
-    "<C-l>",
-    "<C-w>l",
-    { silent = true, noremap = true, desc = "Jump left" }
+  "n",
+  "<C-l>",
+  "<C-w>l",
+  { silent = true, noremap = true, desc = "Jump left" }
 )
 vim.keymap.set(
-    "n",
-    "<C-j>",
-    "<C-w>j",
-    { silent = true, noremap = true, desc = "Jump down" }
+  "n",
+  "<C-j>",
+  "<C-w>j",
+  { silent = true, noremap = true, desc = "Jump down" }
 )
 vim.keymap.set(
-    "n",
-    "<C-k>",
-    "<C-w>k",
-    { silent = true, noremap = true, desc = "Jump up" }
+  "n",
+  "<C-k>",
+  "<C-w>k",
+  { silent = true, noremap = true, desc = "Jump up" }
 )
 local term_opts = { silent = true }
 vim.keymap.set("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
@@ -109,20 +115,20 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set(
-    "n",
-    "Y",
-    "y$",
-    { silent = true, noremap = true, desc = "Copy to End of line" }
+  "n",
+  "Y",
+  "y$",
+  { silent = true, noremap = true, desc = "Copy to End of line" }
 )
 vim.keymap.set(
-    { "n", "v", "x" },
-    "<leader>y",
-    '"+y<CR>',
-    { silent = true, noremap = true, desc = "Copy to Clipboard" }
+  { "n", "v", "x" },
+  "<leader>y",
+  '"+y<CR>',
+  { silent = true, noremap = true, desc = "Copy to Clipboard" }
 )
 vim.keymap.set(
-    { "n", "v", "x" },
-    "<leader>d",
-    '"+d<CR>',
-    { silent = true, noremap = true, desc = "Copy to Clipboard" }
+  { "n", "v", "x" },
+  "<leader>d",
+  '"+d<CR>',
+  { silent = true, noremap = true, desc = "Copy to Clipboard" }
 )
