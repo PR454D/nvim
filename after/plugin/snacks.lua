@@ -92,7 +92,7 @@ snacks.setup({
           border = "rounded",
           title = " {title} {live} {flags}",
           title_pos = "left",
-          { win = "input", height = 1, border = "rounded" },
+          -- { win = "input", height = 1, border = "rounded" },
           {
             box = "horizontal",
             { win = "list", border = "rounded" },

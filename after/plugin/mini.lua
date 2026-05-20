@@ -1,3 +1,18 @@
+require("mini.basics").setup({
+  options = {
+    extra_ui = true,
+    win_borders = "double",
+  },
+  mappings = {
+    basic = true,
+    windows = true,
+    move_with_alt = true,
+  },
+  autocommands = {
+    basic = true,
+    relnum_in_visual_mode = false,
+  },
+})
 require("mini.icons").setup()
 require("mini.statusline").setup()
 local mini_pairs = require("mini.pairs")
